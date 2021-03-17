@@ -1,0 +1,106 @@
+/*Carousel*/
+.carousel{
+    position: relative;             /*Posicao relativa a tela*/
+
+    height: 40rem;                  /*Altura*/
+    width: 45rem;                   /*Largura*/
+
+    border-radius: 10px 10px 0 0;   /*Borda arredondada*/
+
+    overflow: hidden;               /*Quando as imagems ficarem uma de cada lado, elas desapareçam*/
+}
+
+.carousel__botao{
+    position: absolute;             /*Posicionamento absoluto para posicionar os botoes*/
+
+    width: 2.25rem;                 /*Largura*/
+    height: 2.25rem;                /*Altura*/
+
+    top: 50%;                       /*Centralizar o botao verticalmente*/
+    transform: translateY(-50%);    /*Centralizar o botao verticalmente*/
+
+    border: none;                   /*Remove as bordas*/
+    border-radius: 50%;             /*Arredondando as bordas*/
+
+    background-color: var(--rosa-claro-transparente); /*Cor do botao*/
+    background-size: .5rem;          /*Tamanho do botao*/
+    background-position: center;     /*Posicionamento no centro*/
+    background-repeat: no-repeat;    /*Nao vai repetir*/
+
+    padding: .2rem;                  /*Espacamento interno*/
+
+    z-index: 10;                     /*Garante que os botoes fiquem a frente das imagens*/
+}
+
+.carousel__botao--anterior{
+    left: 0;                                            /*Posicionamento na esquerda*/
+
+    margin-left: 1rem;                                  /*Margem para a esquerda*/
+
+    background-image: url(../Imagens/seta-esquerda.svg);/*Imagem do botao*/
+    background-position: .8rem center;                  /*Posicao do botao*/
+}
+.carousel__botao--proximo{
+    right: 0;                                            /*Posicionamento na direita*/
+
+    margin-right: 1rem;                                  /*Margem para a direita*/
+
+    background-image: url(../Imagens/seta-direita.svg);/*Imagem do botao*/
+    background-position: .95rem center;                  /*Posicao do botao*/
+}
+
+.carousel__lista-produtos{
+    position: relative;                   /*Posicionamento relativo*/
+
+    height: 100%;                         /*Altura*/
+
+    transition: transform .25s;
+}
+
+.carousel__produto{
+    position: absolute;                    /*Posicionamento absoluto*/
+
+    top: 0;                                 /*Top 0 e Bottom 0 para garantir a imagem centralizada*/
+    bottom: 0;                              /*Top 0 e Bottom 0 para garantir a imagem centralizada*/
+
+    width: 100%;                            /*Largura*/
+}
+
+.carousel__imagem-container{                  /*Ambos 100% para ocupar todo espaço do container*/
+    width: 100%;                            
+    height: 100%;
+}
+.carousel__imagem-imagem{                  /*Ambos 100% para ocupar todo espaço do container*/
+    width: 100%;                            
+    height: 100%;
+
+    object-fit: cover;                      /*Caso o conteudo for maior, ele mantem a proporção sem distorcer a imagem*/
+}
+
+.carousel__indicadores{
+    position: absolute;                     /*Posicao absoluta*/
+    bottom: 0;                              /*Posicionamento 0 para baixo*/
+
+    width: 100%;                            /*Largura 100%*/
+    display: flex;                          /*Vai alinhar os objetos em linha*/
+    justify-content: center;                /*Centralizara os objetos*/
+    
+}
+
+.carousel__indicador{
+    width: 2.25rem;                                 /*Largura*/
+    height: 1rem;                                 /*Altura*/
+
+    background-color: var(--branco-transparente);   /*Cor de fundo*/
+    border-radius: 2rem;                            /*Borda arredondada*/
+
+    border: none;                                   /*Sem bordas*/
+
+    margin: .5rem 1rem;                             /*Margem*/
+
+    cursor: pointer;                                /*Cursor muda ao passar por cima*/
+}
+
+.carousel__indicador--ativo{
+    background-color: var(--laranja);               /*Cor de fundo*/
+}
